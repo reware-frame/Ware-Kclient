@@ -10,7 +10,7 @@
 		<version>1.2.5.RELEASE</version>
 	</parent>
 
-	<groupId>com.robert.kafka</groupId>
+	<groupId>com.ten.ware.kafka</groupId>
 	<artifactId>kclient-processor</artifactId>
 	<version>0.0.1</version>
 	<name>kclient-processor</name>
