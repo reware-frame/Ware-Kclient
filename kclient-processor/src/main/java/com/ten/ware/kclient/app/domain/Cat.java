@@ -2,9 +2,6 @@ package com.ten.ware.kclient.app.domain;
 
 /**
  * Sample bean for conversion between JSON and object.
- *
- * @author Robert Lee
- * @since Aug 21, 2015
  */
 
 public class Cat {
