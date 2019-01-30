@@ -39,6 +39,7 @@ public abstract class DocumentMessageHandler extends SafelyMessageHandler {
 		super(excepHandlers);
 	}
 
+	@Override
 	protected void doExecute(String message) {
 		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
 		try {

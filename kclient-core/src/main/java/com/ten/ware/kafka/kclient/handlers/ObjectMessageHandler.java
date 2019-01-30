@@ -33,6 +33,7 @@ public abstract class ObjectMessageHandler<T> extends SafelyMessageHandler {
 		super(excepHandlers);
 	}
 
+	@Override
 	protected void doExecute(String message) {
 		JSONObject jsonObject = JSON.parseObject(message);
 		doExecuteObject(jsonObject);

@@ -41,6 +41,7 @@ public abstract class BeanMessageHandler<T> extends SafelyMessageHandler {
 		this.clazz = clazz;
 	}
 
+	@Override
 	protected void doExecute(String message) {
 		T bean = JSON.parseObject(message, clazz);
 		doExecuteBean(bean);

@@ -40,6 +40,7 @@ public abstract class BeansMessageHandler<T> extends SafelyMessageHandler {
 		this.clazz = clazz;
 	}
 
+	@Override
 	protected void doExecute(String message) {
 		List<T> beans = JSON.parseArray(message, clazz);
 		doExecuteBeans(beans);
