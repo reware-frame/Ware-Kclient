@@ -7,79 +7,93 @@ import java.util.Map;
 /**
  * Used to store the handler related information by reflection. These
  * information will be used to call the handler by reflection subsequently.
- * 
- * @author Robert Lee
- * @since Aug 21, 2015
- *
+ * <p>
+ * 元数据对象：为Handler对象添加注解方法
  */
 
 public class KafkaHandlerMeta {
-	private Object bean;
+    /**
+     * Handler对象
+     */
+    private Object bean;
+    /**
+     * 注解的方法
+     */
+    private Method method;
 
-	private Method method;
+    private Class<? extends Object> parameterType;
 
-	private Class<? extends Object> parameterType;
+    /**
+     * InputConsumer
+     */
+    private InputConsumer inputConsumer;
 
-	private InputConsumer inputConsumer;
+    /**
+     * OutputProducer
+     */
+    private OutputProducer outputProducer;
 
-	private OutputProducer outputProducer;
+    /**
+     * ErrorHandler
+     */
+    private Map<ErrorHandler, Method> errorHandlers = new HashMap<ErrorHandler, Method>();
 
-	private Map<ErrorHandler, Method> errorHandlers = new HashMap<ErrorHandler, Method>();
+    // ...
 
-	public Object getBean() {
-		return bean;
-	}
+    public Object getBean() {
+        return bean;
+    }
 
-	public void setBean(Object bean) {
-		this.bean = bean;
-	}
+    public void setBean(Object bean) {
+        this.bean = bean;
+    }
 
-	public Method getMethod() {
-		return method;
-	}
+    public Method getMethod() {
+        return method;
+    }
 
-	public void setMethod(Method method) {
-		this.method = method;
-	}
+    public void setMethod(Method method) {
+        this.method = method;
+    }
 
-	public Class<? extends Object> getParameterType() {
-		return parameterType;
-	}
+    public Class<? extends Object> getParameterType() {
+        return parameterType;
+    }
 
-	public void setParameterType(Class<? extends Object> parameterType) {
-		this.parameterType = parameterType;
-	}
+    public void setParameterType(Class<? extends Object> parameterType) {
+        this.parameterType = parameterType;
+    }
 
-	public InputConsumer getInputConsumer() {
-		return inputConsumer;
-	}
+    public InputConsumer getInputConsumer() {
+        return inputConsumer;
+    }
 
-	public void setInputConsumer(InputConsumer inputConsumer) {
-		this.inputConsumer = inputConsumer;
-	}
+    public void setInputConsumer(InputConsumer inputConsumer) {
+        this.inputConsumer = inputConsumer;
+    }
 
-	public OutputProducer getOutputProducer() {
-		return outputProducer;
-	}
+    public OutputProducer getOutputProducer() {
+        return outputProducer;
+    }
 
-	public void setOutputProducer(OutputProducer outputProducer) {
-		this.outputProducer = outputProducer;
-	}
+    public void setOutputProducer(OutputProducer outputProducer) {
+        this.outputProducer = outputProducer;
+    }
 
-	public Map<ErrorHandler, Method> getErrorHandlers() {
-		return errorHandlers;
-	}
+    public Map<ErrorHandler, Method> getErrorHandlers() {
+        return errorHandlers;
+    }
 
-	public void setErrorHandlers(Map<ErrorHandler, Method> errorHandlers) {
-		this.errorHandlers = errorHandlers;
-	}
+    public void setErrorHandlers(Map<ErrorHandler, Method> errorHandlers) {
+        this.errorHandlers = errorHandlers;
+    }
 
-	public void addErrorHandlers(Map<ErrorHandler, Method> errorHandlers) {
-		this.errorHandlers.putAll(errorHandlers);
-	}
+    public void addErrorHandlers(Map<ErrorHandler, Method> errorHandlers) {
+        this.errorHandlers.putAll(errorHandlers);
+    }
 
-	public void addErrorHandlers(ErrorHandler errorHandler, Method method) {
-		this.errorHandlers.put(errorHandler, method);
-	}
+    public void addErrorHandlers(ErrorHandler errorHandler, Method method) {
+        this.errorHandlers.put(errorHandler, method);
+    }
 
 }

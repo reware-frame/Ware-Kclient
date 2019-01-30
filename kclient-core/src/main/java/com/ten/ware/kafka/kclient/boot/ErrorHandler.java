@@ -9,17 +9,15 @@ import java.lang.annotation.Target;
 /**
  * This annotation is used for a method which serve as an exception handler. It
  * includes the metadata for an exception handler.
- * 
- * @author Robert Lee
- * @since Aug 21, 2015
- *
+ * <p>
+ * 此注释用于作为异常处理程序的方法。它包含异常处理程序的元数据。
  */
 
-@Target({ ElementType.METHOD })
+@Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface ErrorHandler {
-	Class<? extends Throwable> exception() default Throwable.class;
+    Class<? extends Throwable> exception() default Throwable.class;
 
-	String topic() default "";
+    String topic() default "";
 }

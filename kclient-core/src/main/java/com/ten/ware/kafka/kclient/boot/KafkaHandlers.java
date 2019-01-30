@@ -12,13 +12,11 @@ import org.springframework.stereotype.Component;
  * This annotation is used to declare a class to be a message handler
  * collection. This bean be also Spring @Component so that it can be
  * component-scanned by spring context.
- * 
- * @author Robert Lee
- * @since Aug 21, 2015
- *
+ * <p>
+ * 标记类中的消息处理器方法。此注释用于将类声明为消息处理程序集合。这个bean也是Spring @Component，这样它就可以被Spring上下文组件扫描。
  */
 
-@Target({ ElementType.TYPE })
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
