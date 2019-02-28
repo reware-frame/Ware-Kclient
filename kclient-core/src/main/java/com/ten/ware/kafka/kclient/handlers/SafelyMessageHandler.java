@@ -66,7 +66,7 @@ public abstract class SafelyMessageHandler implements MessageHandler {
                     excepHandler.handle(t, message);
                 } catch (Exception e) {
                     log.error(
-                            "Exception hanppens when the handler {} is handling the exception {} and the message {}. Please check if the exception handler is configured properly.",
+                            "Exception happens when the handler {} is handling the exception {} and the message {}. Please check if the exception handler is configured properly.",
                             excepHandler.getClass(), t.getClass(), message);
                     log.error(
                             "The stack of the new exception on exception is, ",

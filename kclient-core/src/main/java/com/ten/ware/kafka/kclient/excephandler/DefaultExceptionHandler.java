@@ -26,7 +26,7 @@ public class DefaultExceptionHandler implements ExceptionHandler {
     public void handle(Throwable t, String message) {
         if (t instanceof InterruptedException) {
             errorRunLog.error(
-                    "Maybe it is shutting down. Or interruped when handing the message:\t"
+                    "Maybe it is shutting down. Or interrupted when handing the message:\t"
                             + message, t);
         } else {
             errorShutdownlog.error(

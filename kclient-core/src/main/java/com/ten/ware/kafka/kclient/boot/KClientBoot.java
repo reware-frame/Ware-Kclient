@@ -518,7 +518,7 @@ public class KClientBoot implements ApplicationContextAware {
                     .getInputConsumer().maxThreadNum(), beanMessageHandler);
 
         } else {
-            kafkaConsumer = new KafkaConsumer(kafkaHandlerMeta
+            kafkaConsumer = new  KafkaConsumer(kafkaHandlerMeta
                     .getInputConsumer().propertiesFile(), kafkaHandlerMeta
                     .getInputConsumer().topic(), kafkaHandlerMeta
                     .getInputConsumer().streamNum(), beanMessageHandler);
